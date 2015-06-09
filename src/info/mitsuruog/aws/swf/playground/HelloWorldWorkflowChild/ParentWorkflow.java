@@ -1,5 +1,7 @@
 package info.mitsuruog.aws.swf.playground.HelloWorldWorkflowChild;
 
+import info.mitsuruog.aws.swf.playground.Config;
+
 import com.amazonaws.services.simpleworkflow.flow.annotations.Execute;
 import com.amazonaws.services.simpleworkflow.flow.annotations.Workflow;
 import com.amazonaws.services.simpleworkflow.flow.annotations.WorkflowRegistrationOptions;
@@ -8,6 +10,6 @@ import com.amazonaws.services.simpleworkflow.flow.annotations.WorkflowRegistrati
 @WorkflowRegistrationOptions(
 		defaultExecutionStartToCloseTimeoutSeconds = 3600)
 public interface ParentWorkflow {
-	   @Execute(version = "1.1")
+	   @Execute(version = Config.API_VERSION)
 	   public void parentGreet();
 }

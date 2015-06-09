@@ -1,9 +1,11 @@
 package info.mitsuruog.aws.swf.playground.HelloWorldWorkflow;
 
+import info.mitsuruog.aws.swf.playground.Config;
+
 import com.amazonaws.services.simpleworkflow.flow.annotations.Activities;
 import com.amazonaws.services.simpleworkflow.flow.annotations.ActivityRegistrationOptions;
 
-@Activities(version="1.1")
+@Activities(version = Config.API_VERSION)
 @ActivityRegistrationOptions(
 		defaultTaskScheduleToStartTimeoutSeconds = 300,
 		defaultTaskStartToCloseTimeoutSeconds = 10)
