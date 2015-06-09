@@ -12,8 +12,8 @@ import info.mitsuruog.aws.swf.playground.HelloWorldWorkflowChild.ChildWorkflowIm
 import info.mitsuruog.aws.swf.playground.HelloWorldWorkflowChild.ParentWorkflowImpl;
 import info.mitsuruog.aws.swf.playground.HelloWorldWorkflowParallel.GreeterParallelActivitiesImpl;
 import info.mitsuruog.aws.swf.playground.HelloWorldWorkflowParallel.GreeterParallelWorkflowImpl;
-import info.mitsuruog.aws.swf.playground.HelloWorldWorkflowSplitMarge.GreeterSplitMargeActivitiesImpl;
-import info.mitsuruog.aws.swf.playground.HelloWorldWorkflowSplitMarge.GreeterSplitMargeWorkflowImpl;
+import info.mitsuruog.aws.swf.playground.HelloWorldWorkflowSplitMerge.GreeterSplitMergeActivitiesImpl;
+import info.mitsuruog.aws.swf.playground.HelloWorldWorkflowSplitMerge.GreeterSplitMargeWorkflowImpl;
 
 import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow;
 import com.amazonaws.services.simpleworkflow.flow.ActivityWorker;
@@ -34,7 +34,7 @@ public class Worker {
 		activityWorker.addActivitiesImplementation(new GreeterAsyncActivitiesImpl());
 		activityWorker.addActivitiesImplementation(new ChildActivitiesImpl());
 		activityWorker.addActivitiesImplementation(new GreeterParallelActivitiesImpl());
-		activityWorker.addActivitiesImplementation(new GreeterSplitMargeActivitiesImpl());
+		activityWorker.addActivitiesImplementation(new GreeterSplitMergeActivitiesImpl());
 		activityWorker.start();
 		
 		// workflow poller start
